@@ -494,7 +494,7 @@ header .scroll-down .icon-down {
   font-size: 10px;
 }
 
-.swiper.about {
+.swiperAbout {
   height: 550px;
   width: 100%;
   display: flex;
@@ -502,31 +502,31 @@ header .scroll-down .icon-down {
   justify-content: center;
 }
 @media only screen and (max-width: 1024px) {
-  .swiper.about {
+  .swiperAbout {
     height: 350px;
   }
 }
 @media only screen and (max-width: 576px) {
-  .swiper.about {
+  .swiperAbout {
     height: 500px;
   }
 }
-.swiper.about .swiper-slide {
+.swiperAbout .swiper-slide {
   padding: 200px 0;
   display: block;
   text-align: center;
 }
 @media only screen and (max-width: 1024px) {
-  .swiper.about .swiper-slide {
+  .swiperAbout .swiper-slide {
     padding: 40px 0;
   }
 }
 @media only screen and (max-width: 576px) {
-  .swiper.about .swiper-slide {
+  .swiperAbout .swiper-slide {
     padding: 100px 0;
   }
 }
-.swiper.about .swiper-slide .pseudotitle {
+.swiperAbout .swiper-slide .pseudotitle {
   font-family: "montserratthin", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -546,6 +546,7 @@ header .scroll-down .icon-down {
   background-color: #FFFFFF;
   margin-bottom: 40px;
 }
+
 #projects {
   margin-top: 565px;
 }
@@ -818,6 +819,7 @@ header .scroll-down .icon-down {
 }
 #news .container {
   padding: 120px 0 170px;
+  position: relative;
 }
 #news .container .horizontal-border {
   display: block;
@@ -830,36 +832,36 @@ header .scroll-down .icon-down {
   color: #FFFFFF;
   margin-bottom: 90px;
 }
-#news .container .swiper.news {
-  height: 520px;
-  max-width: 100%;
+#news .container .swiperNews {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow: hidden;
 }
-#news .container .swiper.news .swiper-slide {
+#news .container .swiperNews .swiper-slide {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  object-position: center;
   position: relative;
   width: 370px;
   max-width: 100%;
-  margin-right: 30px;
   padding-top: 0;
 }
-#news .container .swiper.news .swiper-slide:last-child {
-  margin-right: 0;
-}
-#news .container .swiper.news .swiper-slide .container-info {
+#news .container .swiperNews .swiper-slide .container-info {
   width: 370px;
   max-width: 100%;
   padding: 30px 20px;
   background-color: #FFFFFF;
 }
-#news .container .swiper.news .swiper-slide .container-info .info-holder {
+#news .container .swiperNews .swiper-slide .container-info .info-holder {
   margin-bottom: 40px;
 }
-#news .container .swiper.news .swiper-slide .container-info .info-holder .title-main {
+#news .container .swiperNews .swiper-slide .container-info .info-holder .title-main {
   display: inline-block;
   margin-bottom: 15px;
   font-family: "montserratthin", sans-serif;
@@ -869,7 +871,7 @@ header .scroll-down .icon-down {
   line-height: 27px;
   color: #2C4058;
 }
-#news .container .swiper.news .swiper-slide .container-info .info-holder p {
+#news .container .swiperNews .swiper-slide .container-info .info-holder p {
   font-family: "open_sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -877,19 +879,19 @@ header .scroll-down .icon-down {
   line-height: 25px;
   color: #2C4058;
 }
-#news .container .swiper.news .swiper-slide .container-info .user {
+#news .container .swiperNews .swiper-slide .container-info .user {
   display: flex;
   flex-wrap: wrap;
 }
-#news .container .swiper.news .swiper-slide .container-info .user img {
+#news .container .swiperNews .swiper-slide .container-info .user img {
   border-radius: 50%;
   margin-right: 20px;
 }
-#news .container .swiper.news .swiper-slide .container-info .user .user-info {
+#news .container .swiperNews .swiper-slide .container-info .user .user-info {
   display: block;
   margin: auto 0;
 }
-#news .container .swiper.news .swiper-slide .container-info .user .user-info .users-name {
+#news .container .swiperNews .swiper-slide .container-info .user .user-info .users-name {
   display: block;
   font-family: "montserratthin", sans-serif;
   font-style: normal;
@@ -898,7 +900,7 @@ header .scroll-down .icon-down {
   line-height: 22px;
   color: #2C4058;
 }
-#news .container .swiper.news .swiper-slide .container-info .user .user-info .users-date {
+#news .container .swiperNews .swiper-slide .container-info .user .user-info .users-date {
   display: block;
   font-family: "montserratthin", sans-serif;
   font-style: normal;
@@ -908,8 +910,7 @@ header .scroll-down .icon-down {
   color: #55B7FF;
 }
 #news .container .swiper-pagination.swiper-pagination-news {
-  margin-right: 52px;
-  margin-bottom: 40px;
+  margin: 40px 40px 100px;
 }
 #news .container .swiper-pagination.swiper-pagination-news .swiper-pagination-bullet {
   width: 10px;
@@ -920,12 +921,12 @@ header .scroll-down .icon-down {
 }
 #news .container .swiper-button-prev.swiper-button-prev-news::after,
 #news .container .swiper-button-next.swiper-button-next-news::after {
-  background-image: url("../../src/img/button-prev.png");
   color: #fff;
   font-size: 10px;
   border: 1px solid #FFFFFF;
   border-radius: 50%;
   padding: 14px 16px;
+  transform: translateY(45px);
 }
 #news .container .swiper-button-prev.swiper-button-prev-news::after {
   left: -10;
@@ -1024,7 +1025,7 @@ header .scroll-down .icon-down {
 }
 
 #googleMap {
-  height: 700px;
+  height: 500px;
   width: 100%;
 }
 

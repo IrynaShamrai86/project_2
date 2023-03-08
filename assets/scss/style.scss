@@ -550,7 +550,7 @@ header {
 }
 
 
-.swiper.about {
+.swiperAbout {
   height: 550px;
   width: 100%;
   display: flex;
@@ -593,7 +593,6 @@ header {
   margin-right: 52px;
   margin-bottom: 40px;
 
-
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
@@ -601,9 +600,6 @@ header {
     background-color: #FFFFFF;
     margin-bottom: 40px;
 
-    .swiper-pagination-bullet-active {
-      //background-color: #FFFFFF;
-    }
   }
 }
 
@@ -900,6 +896,7 @@ header {
 
   .container {
     padding: 120px 0 170px;
+    position: relative;
 
     .horizontal-border {
       display: block;
@@ -914,27 +911,25 @@ header {
       margin-bottom: 90px;
     }
 
-    .swiper.news {
-      height: 520px;
-      max-width: 100%;
+    .swiperNews {
+      height: 100%;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
+      overflow: hidden;
 
       .swiper-slide {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+        object-position: center;
         position: relative;
         width: 370px;
         max-width: 100%;
-        margin-right: 30px;
         padding-top: 0;
-
-        &:last-child {
-          margin-right: 0;
-        }
 
         .container-info {
           width: 370px;
@@ -1005,8 +1000,7 @@ header {
     }
 
     .swiper-pagination.swiper-pagination-news {
-      margin-right: 52px;
-      margin-bottom: 40px;
+      margin: 40px 40px 100px;
 
       .swiper-pagination-bullet {
         width: 10px;
@@ -1023,12 +1017,12 @@ header {
 
     .swiper-button-prev.swiper-button-prev-news::after,
     .swiper-button-next.swiper-button-next-news::after {
-      background-image: url("../../src/img/button-prev.png");
       color: #fff;
       font-size: 10px;
       border: 1px solid #FFFFFF;
       border-radius: 50%;
       padding: 14px 16px;
+      transform: translateY(45px);
     }
 
     .swiper-button-prev.swiper-button-prev-news::after {
@@ -1156,7 +1150,7 @@ header {
 
 
 #googleMap {
-  height: 700px;
+  height: 500px;
   width: 100%;
 }
 
@@ -1262,7 +1256,6 @@ header {
         }
 
         .contact-form-input {
-
           z-index: 10;
           display: flex;
           flex-wrap: wrap;

@@ -1,4 +1,4 @@
-const swiperAbout = new Swiper('.swiper.about', {
+const swiperAbout = new Swiper('.swiperAbout', {
     direction: 'vertical',
     grabCursor: true,
     navigation: false,
@@ -11,63 +11,62 @@ const swiperAbout = new Swiper('.swiper.about', {
         crossFade: true,
     },
     slideToClickedSlide: true,
+
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+    },
     speed: 800,
 
 });
 
 
-// const swiperNews = new Swiper('.swiper.news', {
-//     slidesPerView: 6,
-//     spaceBetween: 30,
-//     grabCursor: true,
-//
-//     navigation: {
-//         nextEl: '.swiper-button-next-news',
-//         prevEl: '.swiper-button-prev-news',
-//     },
-//
-//     pagination: {
-//         el: '.swiper-pagination-news',
-//         clickable: true,
-//     },
-//
-//     effect: 'fade',
-//     fadeEffect: {
-//         crossFade: true,
-//     },
-//
-//     slideToClickedSlide: true,
-//
-//     autoplay: {
-//         delay: 3000,
-//         stopOnLastSlide: false,
-//         disableOnInteraction: false,
-//     },
-//
-//     speed: 800,
-//
-//     breakpoints:{
-//         576: {
-//             slidesPerView: 1,
-//         },
-//         768: {
-//             slidesPerView: 1,
-//         },
-//         1024: {
-//             slidesPerView: 2,
-//         },
-//         1360: {
-//             slidesPerView: 3,
-//         }
-//     },
-// });
+const swiperNews = new Swiper('.swiperNews', {
+    slidesPerView: 3,
+    loop: true,
+    grabCursor: true,
 
-
-
-Fancybox.bind("[data-fancybox]", {
-    Image: {
-        zoom: true,
+    navigation: {
+        nextEl: '.swiper-button-next-news',
+        prevEl: '.swiper-button-prev-news',
     },
+
+    pagination: {
+        el: '.swiper-pagination-news',
+        clickable: true,
+    },
+
+    slideToClickedSlide: true,
+
+    autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+    },
+
+    speed: 800,
+
+    breakpoints:{
+        576: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 1,
+        },
+        1024: {
+            slidesPerView: 2,
+        },
+        1360: {
+            slidesPerView: 3,
+        }
+    },
+});
+
+
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+
 });
 
 
